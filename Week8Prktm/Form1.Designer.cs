@@ -43,6 +43,13 @@
             this.Captain2 = new System.Windows.Forms.Label();
             this.Stadium = new System.Windows.Forms.Label();
             this.Capacity = new System.Windows.Forms.Label();
+            this.buttoncheck = new System.Windows.Forms.Button();
+            this.label = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbltanggal = new System.Windows.Forms.Label();
+            this.lblskor = new System.Windows.Forms.Label();
+            this.dgcheck = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgcheck)).BeginInit();
             this.SuspendLayout();
             // 
             // cb1
@@ -102,7 +109,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(256, 285);
+            this.label5.Location = new System.Drawing.Point(258, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 20);
             this.label5.TabIndex = 6;
@@ -111,7 +118,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(256, 331);
+            this.label6.Location = new System.Drawing.Point(258, 258);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 20);
             this.label6.TabIndex = 7;
@@ -164,7 +171,7 @@
             // Stadium
             // 
             this.Stadium.AutoSize = true;
-            this.Stadium.Location = new System.Drawing.Point(357, 285);
+            this.Stadium.Location = new System.Drawing.Point(359, 212);
             this.Stadium.Name = "Stadium";
             this.Stadium.Size = new System.Drawing.Size(0, 20);
             this.Stadium.TabIndex = 13;
@@ -172,16 +179,80 @@
             // Capacity
             // 
             this.Capacity.AutoSize = true;
-            this.Capacity.Location = new System.Drawing.Point(357, 331);
+            this.Capacity.Location = new System.Drawing.Point(359, 258);
             this.Capacity.Name = "Capacity";
             this.Capacity.Size = new System.Drawing.Size(0, 20);
             this.Capacity.TabIndex = 14;
+            // 
+            // buttoncheck
+            // 
+            this.buttoncheck.Location = new System.Drawing.Point(400, 291);
+            this.buttoncheck.Name = "buttoncheck";
+            this.buttoncheck.Size = new System.Drawing.Size(128, 46);
+            this.buttoncheck.TabIndex = 15;
+            this.buttoncheck.Text = "Check";
+            this.buttoncheck.UseVisualStyleBackColor = true;
+            this.buttoncheck.Click += new System.EventHandler(this.buttoncheck_Click);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(260, 360);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(74, 20);
+            this.label.TabIndex = 16;
+            this.label.Text = "Tanggal :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(284, 398);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 20);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Skor :";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lbltanggal
+            // 
+            this.lbltanggal.AutoSize = true;
+            this.lbltanggal.Location = new System.Drawing.Point(359, 360);
+            this.lbltanggal.Name = "lbltanggal";
+            this.lbltanggal.Size = new System.Drawing.Size(60, 20);
+            this.lbltanggal.TabIndex = 18;
+            this.lbltanggal.Text = "label10";
+            // 
+            // lblskor
+            // 
+            this.lblskor.AutoSize = true;
+            this.lblskor.Location = new System.Drawing.Point(359, 398);
+            this.lblskor.Name = "lblskor";
+            this.lblskor.Size = new System.Drawing.Size(60, 20);
+            this.lblskor.TabIndex = 19;
+            this.lblskor.Text = "label11";
+            // 
+            // dgcheck
+            // 
+            this.dgcheck.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgcheck.Location = new System.Drawing.Point(12, 432);
+            this.dgcheck.Name = "dgcheck";
+            this.dgcheck.RowHeadersWidth = 62;
+            this.dgcheck.RowTemplate.Height = 28;
+            this.dgcheck.Size = new System.Drawing.Size(924, 301);
+            this.dgcheck.TabIndex = 20;
+            this.dgcheck.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgcheck_CellContentClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 467);
+            this.ClientSize = new System.Drawing.Size(948, 745);
+            this.Controls.Add(this.dgcheck);
+            this.Controls.Add(this.lblskor);
+            this.Controls.Add(this.lbltanggal);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.buttoncheck);
             this.Controls.Add(this.Capacity);
             this.Controls.Add(this.Stadium);
             this.Controls.Add(this.Captain2);
@@ -200,6 +271,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgcheck)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,6 +294,12 @@
         private System.Windows.Forms.Label Captain2;
         private System.Windows.Forms.Label Stadium;
         private System.Windows.Forms.Label Capacity;
+        private System.Windows.Forms.Button buttoncheck;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbltanggal;
+        private System.Windows.Forms.Label lblskor;
+        private System.Windows.Forms.DataGridView dgcheck;
     }
 }
 

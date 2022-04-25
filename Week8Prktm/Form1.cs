@@ -100,5 +100,28 @@ namespace Week8Prktm
 
             }
         }
+
+        private void buttoncheck_Click(object sender, EventArgs e)
+        {
+            DataTable dtts = new DataTable();
+            sqlQuery = "select Date_format(m.match_date, '%d %M %Y') as Tanggal, concat(m.goal_home, ' - ', m.goal_away) as Skor, m.team_home, m.team_away from `match` m where team_home = '"+cb1.SelectedValue.ToString()+"' and team_away = '"+cb2.SelectedValue.ToString()+"' ";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtts);
+            lbltanggal.Text = dtts.Rows[0][0].ToString();
+            lblskor.Text = dtts.Rows[0][1].ToString();
+
+            DataTable dtcheck = new DataTable();
+            sqlQuery = "SELECT * from dmatch dm, player p, `match` m where dm.match_id = m.match_id and dm.player_id = p.player_id and team_home = '" + cb1.SelectedValue.ToString() + "' and team_away = '" + cb2.SelectedValue.ToString() + "'";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtcheck);
+            dgcheck.DataSource = dtcheck;
+        }
+
+        private void dgcheck_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
